@@ -33,7 +33,7 @@ export function BrandingGuide() {
         </div>
         <div>
           <img
-            src="./assets/branding_guide.jpeg"
+            src="../assets/branding_guide.jpeg"
             alt="Brand Identity Visual"
             className="rounded-lg shadow-md w-full"
           />
