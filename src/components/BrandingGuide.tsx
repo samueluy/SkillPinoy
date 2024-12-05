@@ -1,4 +1,5 @@
 import React from 'react';
+import branding_guide from '../assets/branding_guide.jpeg';
 
 export function BrandingGuide() {
   return (
@@ -33,7 +34,7 @@ export function BrandingGuide() {
         </div>
         <div>
           <img
-            src="../assets/branding_guide.jpeg"
+            src={branding_guide}
             alt="Brand Identity Visual"
             className="rounded-lg shadow-md w-full"
           />

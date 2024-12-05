@@ -11,7 +11,7 @@ export function Footer() {
             hello@samueluy.com
           </a>
         </div>
-        <p>{new Date().getFullYear()} SkillPinoy.com</p>
+        <p>{new Date().getFullYear()} SkillPinoy.com - All rights reserved</p>
       </div>
     </footer>
   );
