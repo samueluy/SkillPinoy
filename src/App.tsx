@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import { ExternalLink } from 'lucide-react';
 import { Header } from './components/Header';
 import { ContactBanner } from './components/ContactBanner';
