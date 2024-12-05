@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { trackPageView } from './lib/analytics'; // Ensure this points to your analytics utility
 import { Header } from './components/Header';
 import { ContactBanner } from './components/ContactBanner';
 import { DomainStats } from './components/DomainStats';
@@ -8,29 +8,39 @@ import { BrandingGuide } from './components/BrandingGuide';
 import { MainCTA } from './components/MainCTA';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
-import { trackPageView } from './lib/analytics';
 
 export default function App() {
-  const location = useLocation();
-
   useEffect(() => {
-    // Track page views on route changes
-    trackPageView(location.pathname);
-  }, [location]);
+    // Track the initial page view
+    trackPageView(window.location.pathname);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FFF8E7]">
+      {/* Trackable Contact Banner */}
       <ContactBanner />
+
+      {/* Header */}
       <Header />
 
       <main className="max-w-5xl mx-auto px-4 py-12">
+        {/* Hero Section */}
         <Hero />
+
+        {/* Trackable Main Call-to-Action Section */}
         <MainCTA />
+
+        {/* Branding Guide Section */}
         <BrandingGuide />
+
+        {/* Domain Stats Section */}
         <DomainStats />
+
+        {/* Opportunities Section */}
         <Opportunities />
       </main>
 
+      {/* Footer */}
       <Footer />
     </div>
   );

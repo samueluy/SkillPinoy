@@ -1,7 +1,16 @@
 import React from 'react';
 import { Mail, ArrowRight } from 'lucide-react';
+import { trackEvent } from '../lib/analytics'; // Import the tracking utility
 
 export function MainCTA() {
+  const handleContactClick = () => {
+    trackEvent('click', 'MainCTA', 'Contact Me Button');
+  };
+
+  const handleCollaborationClick = () => {
+    trackEvent('click', 'MainCTA', 'Discuss Collaboration Button');
+  };
+
   return (
     <div className="relative bg-gradient-to-br from-[#0077B6] to-[#005f92] rounded-xl p-12 shadow-xl mb-16 overflow-hidden">
       {/* Decorative elements */}
@@ -26,6 +35,7 @@ export function MainCTA() {
           <a
             href="mailto:hello@samueluy.com"
             className="group inline-flex items-center px-8 py-4 bg-white text-[#0077B6] rounded-lg text-xl font-semibold hover:bg-[#FF6B6B] hover:text-white transition-all duration-300 w-full sm:w-auto justify-center shadow-lg hover:shadow-xl"
+            onClick={handleContactClick}
           >
             <Mail className="mr-2 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
             Contact Me
@@ -33,6 +43,7 @@ export function MainCTA() {
           <a
             href="mailto:hello@samueluy.com?subject=SkillPinoy.com%20Collaboration%20Opportunity"
             className="group inline-flex items-center px-8 py-4 bg-[#FF6B6B] text-white rounded-lg text-xl font-semibold hover:bg-white hover:text-[#FF6B6B] transition-all duration-300 w-full sm:w-auto justify-center shadow-lg hover:shadow-xl"
+            onClick={handleCollaborationClick}
           >
             Discuss Collaboration
             <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
